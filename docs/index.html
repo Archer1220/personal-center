@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人中心</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 个人信息区域 -->
+    <div class="profile-header">
+        <div class="profile-bg"></div>
+        <div class="profile-content">
+            <div class="avatar">
+                <img src="../imgs/头像.JPG" alt="头像">
+            </div>
+            <div class="profile-info">
+                <div class="name">张三</div>
+                <div class="nickname">
+                    <span>昵称：<span id="current-nickname">风轻云淡</span></span>
+                    <button id="edit-nickname-btn" class="edit-btn">编辑昵称</button>
+                </div>
+                <div class="department">所在部门：技术研发部</div>
+                <div class="email">邮箱：zhangsan@example.com</div>
+                <div class="phone">手机号：138****8888</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页签导航 -->
+    <div class="tabs-container">
+        <div class="tabs">
+            <div class="tab-wrapper">
+                <button class="tab-button active" data-tab="pending">审批中命题</button>
+            </div>
+            <div class="tab-wrapper">
+                <button class="tab-button" data-tab="published">已发布命题</button>
+            </div>
+            <div class="tab-wrapper">
+                <button class="tab-button" data-tab="draft">草稿箱</button>
+            </div>
+            <div class="tab-wrapper">
+                <button class="tab-button" data-tab="progress">命题进展</button>
+            </div>
+            <div class="tab-wrapper">
+                <button class="tab-button" data-tab="myposts">我的发帖</button>
+            </div>
+            <div class="tab-wrapper">
+                <button class="tab-button" data-tab="approval">我的审批</button>
+            </div>
+            <div class="tab-wrapper">
+                <button class="tab-button" data-tab="likes">点赞</button>
+            </div>
+            <div class="tab-wrapper">
+                <button class="tab-button" data-tab="favorites">收藏</button>
+            </div>
+            <div class="tab-wrapper">
+                <button id="add-tab-btn" class="tab-button add-tab-button">+</button>
+            </div>
+        </div>
+
+        <!-- 页签内容 -->
+        <div class="tab-content">
+            <!-- 审批中命题 -->
+            <div id="pending" class="tab-pane active">
+                <div class="post-list">
+                    <div class="post-item">
+                        <h3>关于优化系统性能的提案</h3>
+                        <p>这个提案旨在提升系统的整体性能...</p>
+                        <div class="post-meta">
+                            <span class="status pending">审批中</span>
+                            <span class="date">2025-10-20</span>
+                        </div>
+                    </div>
+                    <div class="post-item">
+                        <h3>数据库索引优化方案</h3>
+                        <p>针对当前数据库查询效率低下的问题...</p>
+                        <div class="post-meta">
+                            <span class="status pending">审批中</span>
+                            <span class="date">2025-10-19</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 已发布命题 -->
+            <div id="published" class="tab-pane">
+                <div class="post-list">
+                    <div class="post-item">
+                        <h3>新员工培训计划更新</h3>
+                        <p>为了提高新员工的入职体验和工作效率...</p>
+                        <div class="post-meta">
+                            <span class="status published">已发布</span>
+                            <span class="date">2025-10-15</span>
+                        </div>
+                    </div>
+                    <div class="post-item">
+                        <h3>办公室网络升级方案</h3>
+                        <p>为了解决当前网络拥堵问题，提升办公效率...</p>
+                        <div class="post-meta">
+                            <span class="status published">已发布</span>
+                            <span class="date">2025-10-10</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 草稿箱 -->
+            <div id="draft" class="tab-pane">
+                <div class="post-list">
+                    <div class="post-item">
+                        <h3>年度团建活动策划</h3>
+                        <p>初步想法是组织一次户外拓展活动...</p>
+                        <div class="post-meta">
+                            <span class="status draft">草稿</span>
+                            <button class="edit-draft-btn">继续编辑</button>
+                        </div>
+                    </div>
+                    <div class="post-item">
+                        <h3>会议室预约系统改进建议</h3>
+                        <p>目前的会议室预约系统存在一些不足...</p>
+                        <div class="post-meta">
+                            <span class="status draft">草稿</span>
+                            <button class="edit-draft-btn">继续编辑</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 命题进展 -->
+            <div id="progress" class="tab-pane">
+                <div class="progress-sections">
+                    <div class="section">
+                        <h3>我的参与</h3>
+                        <div class="post-list">
+                            <div class="post-item">
+                                <h4>产品UI设计优化讨论</h4>
+                                <p>参与了产品界面设计的优化讨论...</p>
+                                <div class="post-meta">
+                                    <span class="status progress">进行中</span>
+                                    <span class="date">2025-10-18</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section">
+                        <h3>我的组队</h3>
+                        <div class="post-list">
+                            <div class="post-item">
+                                <h4>新技术研究小组</h4>
+                                <p>参与了关于人工智能在业务中应用的研究...</p>
+                                <div class="post-meta">
+                                    <span class="status team">组队中</span>
+                                    <span class="date">2025-10-15</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 我的发帖 -->
+            <div id="myposts" class="tab-pane">
+                <div class="post-list">
+                    <div class="post-item">
+                        <h3>关于提高代码质量的建议</h3>
+                        <p>在日常开发中发现的一些代码质量问题...</p>
+                        <div class="post-meta">
+                            <span class="date">2025-10-18</span>
+                            <div class="actions">
+                                <button class="edit-btn">重新编辑</button>
+                                <button class="withdraw-btn">撤回提交</button>
+                                <button class="delete-btn">删除</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post-item">
+                        <h3>办公环境改善提议</h3>
+                        <p>对当前办公环境中的一些问题提出改善建议...</p>
+                        <div class="post-meta">
+                            <span class="date">2025-10-12</span>
+                            <div class="actions">
+                                <button class="edit-btn">重新编辑</button>
+                                <button class="withdraw-btn">撤回提交</button>
+                                <button class="delete-btn">删除</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 我的审批 -->
+            <div id="approval" class="tab-pane">
+                <div class="post-list">
+                    <div class="post-item">
+                        <h3>服务器采购申请</h3>
+                        <p>由于业务增长需要，申请采购新的服务器设备...</p>
+                        <div class="post-meta">
+                            <span class="date">2025-10-20</span>
+                            <div class="actions">
+                                <button class="approve-btn">通过</button>
+                                <button class="reject-btn">退回</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post-item">
+                        <h3>部门预算调整方案</h3>
+                        <p>根据最新的项目需求，需要对部门预算进行调整...</p>
+                        <div class="post-meta">
+                            <span class="date">2025-10-19</span>
+                            <div class="actions">
+                                <button class="approve-btn">通过</button>
+                                <button class="reject-btn">退回</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 点赞 -->
+            <div id="likes" class="tab-pane">
+                <div class="post-list">
+                    <div class="post-item">
+                        <h3>如何提高团队协作效率</h3>
+                        <p>分享一些在实际工作中提高团队协作效率的经验...</p>
+                        <div class="post-meta">
+                            <span class="date">2025-10-15</span>
+                            <span class="liked">已点赞</span>
+                        </div>
+                    </div>
+                    <div class="post-item">
+                        <h3>技术分享会：微服务架构实践</h3>
+                        <p>本次分享会主要介绍微服务架构的设计原则和实践经验...</p>
+                        <div class="post-meta">
+                            <span class="date">2025-10-10</span>
+                            <span class="liked">已点赞</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 收藏 -->
+            <div id="favorites" class="tab-pane">
+                <div class="post-list">
+                    <div class="post-item">
+                        <h3>行业趋势分析报告</h3>
+                        <p>对当前行业发展趋势的深入分析和预测...</p>
+                        <div class="post-meta">
+                            <span class="date">2025-10-12</span>
+                            <span class="favorited">已收藏</span>
+                        </div>
+                    </div>
+                    <div class="post-item">
+                        <h3>最佳实践：代码重构指南</h3>
+                        <p>总结了代码重构过程中的最佳实践和注意事项...</p>
+                        <div class="post-meta">
+                            <span class="date">2025-10-08</span>
+                            <span class="favorited">已收藏</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 编辑昵称弹窗 -->
+    <div id="edit-nickname-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>编辑昵称</h2>
+            <input type="text" id="nickname-input" placeholder="请输入新昵称">
+            <div class="modal-actions">
+                <button id="save-nickname-btn">保存</button>
+                <button id="cancel-nickname-btn">取消</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 头像大图预览模态框 -->
+    <div id="avatar-modal" class="modal">
+        <div class="modal-content avatar-modal-content">
+            <span class="close">&times;</span>
+            <img id="avatar-large" src="../imgs/头像.JPG" alt="头像大图">
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
